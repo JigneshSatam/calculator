@@ -17,16 +17,16 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
         if (username == null || username.length() <= 0) {username = "Calculator";}
         setTitle(username);
 
-        ((Button) findViewById(R.id.one)).setOnClickListener(this);
-        ((Button) findViewById(R.id.two)).setOnClickListener(this);
-        ((Button) findViewById(R.id.three)).setOnClickListener(this);
-        ((Button) findViewById(R.id.four)).setOnClickListener(this);
-        ((Button) findViewById(R.id.five)).setOnClickListener(this);
-        ((Button) findViewById(R.id.six)).setOnClickListener(this);
-        ((Button) findViewById(R.id.seven)).setOnClickListener(this);
-        ((Button) findViewById(R.id.eight)).setOnClickListener(this);
-        ((Button) findViewById(R.id.nine)).setOnClickListener(this);
-        ((Button) findViewById(R.id.zero)).setOnClickListener(this);
+//        ((Button) findViewById(R.id.one)).setOnClickListener(this);
+//        ((Button) findViewById(R.id.two)).setOnClickListener(this);
+//        ((Button) findViewById(R.id.three)).setOnClickListener(this);
+//        ((Button) findViewById(R.id.four)).setOnClickListener(this);
+//        ((Button) findViewById(R.id.five)).setOnClickListener(this);
+//        ((Button) findViewById(R.id.six)).setOnClickListener(this);
+//        ((Button) findViewById(R.id.seven)).setOnClickListener(this);
+//        ((Button) findViewById(R.id.eight)).setOnClickListener(this);
+//        ((Button) findViewById(R.id.nine)).setOnClickListener(this);
+//        ((Button) findViewById(R.id.zero)).setOnClickListener(this);
     }
 
     @Override
