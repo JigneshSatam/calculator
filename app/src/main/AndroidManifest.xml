@@ -7,9 +7,9 @@ http://schemas.android.com/apk/res/android ">
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/calculator_gray"
+        android:icon="@mipmap/calculator_new"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/calculator_gray"
+        android:roundIcon="@mipmap/calculator_new"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
