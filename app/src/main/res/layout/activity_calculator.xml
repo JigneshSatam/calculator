@@ -30,8 +30,30 @@
         android:layout_height="0dp"
         android:layout_weight="0.80"
         android:orientation="vertical"
-        android:weightSum="4">
+        android:weightSum="5">
 
+        <LinearLayout
+            style="@style/buttonHolderLayout">
+            <Button
+                android:id="@+id/left_bracket"
+                android:text="("
+                style="@style/buttonStyle" />
+
+            <Button
+                android:id="@+id/right_bracket"
+                android:text=")"
+                style="@style/buttonStyle" />
+
+            <Button
+                android:id="@+id/del"
+                android:text="DEL"
+                style="@style/buttonStyle" />
+
+            <Button
+                android:id="@+id/clear"
+                android:text="AC"
+                style="@style/buttonStyle" />
+        </LinearLayout>
         <LinearLayout
             style="@style/buttonHolderLayout">
 
@@ -105,8 +127,8 @@
             style="@style/buttonHolderLayout">
 
             <Button
-                android:id="@+id/clear"
-                android:text="AC"
+                android:id="@+id/dot"
+                android:text="."
                 style="@style/buttonStyle" />
 
             <Button
