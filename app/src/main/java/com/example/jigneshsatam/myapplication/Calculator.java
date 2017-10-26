@@ -105,8 +105,11 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
 
             case R.id.equal :
                 String res = calculate(exp);
-                result.setText(res);
-                result.setSelection(res.length());
+                if (res.length() > 0){
+                    result.setText(res);
+                    result.setSelection(res.length());
+                }
+
                 break;
 
             case R.id.clear :
@@ -172,7 +175,8 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
         while(!operatorsStack.empty()){
             solve(operandsStack, operatorsStack);
         }
-        return operandsStack.pop();
+        if (!operandsStack.empty()) return operandsStack.pop();
+        return  "";
     }
 
     boolean isHighPrecedence(char topOperator, char newOperator){
@@ -185,24 +189,25 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
     void solve(Stack<String> operandsStack, Stack<Character> operatorsStack){
         try{
             char operator = operatorsStack.pop();
-            int op1 = Integer.parseInt(operandsStack.pop());
-            int op2 = Integer.parseInt(operandsStack.pop());
-            int value = 0;
+            double op1 = Double.parseDouble(operandsStack.pop());
+            double op2 = Double.parseDouble(operandsStack.pop());
+            double value = 0.0;
             switch(operator) {
                 case '+':
-                    value = op2 + op1;
+                    value = (op2 + op1);
                     break;
                 case '-':
-                    value = op2 - op1;
+                    value = (op2 - op1);
                     break;
                 case '*':
-                    value = op2 * op1;
+                    value = (op2 * op1);
                     break;
                 case '/':
-                    value = op2 / op1;
+                    value = (op2 / op1);
                     break;
             }
-            operandsStack.push(String.valueOf(value));
+            String result = (value - (long) value != 0) ? String.valueOf(value) : String.valueOf((long) value);
+            operandsStack.push(result);
         }catch (Exception e){
 
         }
