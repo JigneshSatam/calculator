@@ -36,7 +36,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
         operators.put('+', 1);
         operators.put('-', 1);
         operators.put('*', 2);
-        operators.put('/', 2);
+        operators.put('/', 3);
     }
 
     @Override
@@ -87,6 +87,10 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
                 replace = "0";
                 break;
 
+            case R.id.dot :
+                replace = ".";
+                break;
+
             case R.id.add :
                 replace = "+";
                 break;
@@ -109,7 +113,16 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
                     result.setText(res);
                     result.setSelection(res.length());
                 }
+                break;
 
+            case R.id.del :
+                if (start > 0 || end > 0) {
+                    replace = "";
+                    if (start == end && start > 0) {
+                        start--;
+                    }
+
+                }
                 break;
 
             case R.id.clear :
@@ -148,7 +161,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
         int j = -1;
         for(int i = 0; i < expArray.length; i++){
             // Check if operand
-            if (Character.isDigit(expArray[i]) && j == -1){
+            if ((Character.isDigit(expArray[i]) || expArray[i] == '.')  && j == -1){
                 j = i;
             }
             // Check if operator
@@ -183,7 +196,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
         int topValue = 0, newValue = 0;
         topValue = operators.get(topOperator);
         newValue = operators.get(newOperator);
-        return topValue > newValue;
+        return topValue >= newValue;
     }
 
     void solve(Stack<String> operandsStack, Stack<Character> operatorsStack){
